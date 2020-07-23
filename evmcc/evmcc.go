@@ -86,7 +86,7 @@ func (evmcc *EvmChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response 
 		return shim.Error(fmt.Sprintf("failed to decode input bytes: %s", err))
 	}
 
-	var gas uint64 = 10000
+	var gas uint64 = 10000000
 	state := statemanager.NewStateManager(stub)
 	evmCache := evm.NewState(state, func(height uint64) []byte {
 		// This function is to be used to return the block hash
