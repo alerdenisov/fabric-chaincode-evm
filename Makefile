@@ -92,7 +92,7 @@ fab3: bin/fab3
 .PHONY: bin/fab3 # let 'go build' handle caching and whether to rebuild
 bin/fab3:
 	mkdir -p bin/
-	cd fab3 && GO111MODULE=on go build -o ./../bin/fab3 ./cmd
+	cd fab3 && GO111MODULE=on go build -ldflags "-w" -o ./../bin/fab3 ./cmd
 
 .PHONY: bin/evmcc # let 'go build' handle caching and whether to rebuild
 bin/evmcc:
